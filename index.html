@@ -1,0 +1,72 @@
+<center>
+    <h1>Toko Alat Musik </h1> 
+   
+    
+</center>
+<center>
+    <img src="toko alat musik.jpg" alt="">
+</center>
+<link href="style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<form action="#" class="container">
+    <br>
+    <label for="nama">Nama &emsp;</label>
+    <br><br>
+    <input type="text" name="nama" id="nama" />
+    <br><br>
+    <label for="jumlahbarang">Jumlah barang</label>
+    <br><br>
+    <input type="text" name="jumlahbarang" id="jumlahbarang" />
+    <br><br>
+    <input type="radio" name="jumlahbarang2" id="jumlahbarang2" />
+    <input type="radio" name="jumlahbarang2" id="jumlahbarang2" />
+    <br><br>
+    <center>
+        <label for="barang">Alat musik</label>
+        <br><br>
+        <input type="checkbox" name="barang" id="barang" value="biola" size="50"/> Biola
+        <input type="checkbox" name="barang" id="barang" value="piano" /> piano
+        <input type="checkbox" name="barang" id="barang" value="gitar" /> gitar
+        <br><br>
+        <img src="biola.jpg"alt="barang" height="200" width="200">
+        <img src="piano.jpg" alt="barang" height="200" width="200">
+        <img src="gitarr.jpg" alt="barang" height="200" width="200">
+        <br><br>
+        <input type="button" value="Kirim" onclick="tampilData()" />
+        <br><br><br>
+    </center>
+   
+</form>
+
+<script>
+    function tampilData() {
+        var nama = document.getElementById("nama").value;
+        var jumlahbarang = document.getElementById("jumlahbarang").value;
+        var jumlahbarang2 = document.querySelector("input[name=jumlahbarang2]:checked").value;
+        var Makanan = document.getElementsByName("barang");
+        var daftarpesanan = ''
+
+        for(var barang2 of barang) {
+            if(barang2.checked) {
+                daftarpesanan += ', '+barang2.value
+            }
+        }
+
+        daftarpesanan = daftarpesanan.substring(1)
+
+
+
+        alert(
+            "   Terimakasih telah membeli barang di toko kami    " +
+            "\nSilahkan periksa kembali apakah data pesanan anda sudah benar" +
+            "\n\nNama : " +
+            nama +
+            "\njumlah barang : " +
+            jumlahbarang +
+            "\npesanan : " +
+            daftarpesanan +
+
+            "\n\nMakasih"
+        );
+    }
+</script>
